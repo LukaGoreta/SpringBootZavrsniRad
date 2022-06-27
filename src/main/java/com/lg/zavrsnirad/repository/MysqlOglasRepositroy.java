@@ -63,7 +63,7 @@ public class MysqlOglasRepositroy  implements OglasRepository, KategorijaReposit
         Oglas oglas = new Oglas();
         oglas.setOglasId(Long.valueOf(rs.getString("oglas_id")));
         oglas.setUserToken(rs.getString("user_token"));
-        oglas.setNaslov(rs.getString("cijena"));
+        oglas.setCijena(Long.valueOf(rs.getString("cijena")));
         oglas.setFotografije(rs.getBytes("fotografije"));
         oglas.setImeProdavaca(rs.getString("ime_prodavaca"));
         oglas.setKategorijaId(Long.valueOf(rs.getString("kategorija_id")));

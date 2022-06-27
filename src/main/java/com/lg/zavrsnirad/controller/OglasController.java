@@ -19,10 +19,12 @@ public class OglasController {
 
     public final OglasService oglasService;
 
-    public OglasController(OglasService oglasService){this.oglasService = oglasService;}
+    public OglasController(OglasService oglasService) {
+        this.oglasService = oglasService;
+    }
 
     @GetMapping
-    public List<OglasDTO> getAll(){
+    public List<OglasDTO> getAll() {
         return oglasService.findAll();
     }
 
@@ -36,6 +38,8 @@ public class OglasController {
                 .contentType(MediaType.IMAGE_JPEG)
                 .body(image);
     }
+
+
 
     @GetMapping("/{idOglas}")
     public Optional<OglasDTO> getOglasById(@PathVariable final String idOglas){
@@ -55,8 +59,7 @@ public class OglasController {
 
     @DeleteMapping("/obrisi/{oglasId}")
     public void delete(@PathVariable String oglasId){
-        oglasService.deleteOglasById(oglasId);//.map(
-//         ResponseEntity.status(HttpStatus.OK).body(oglasId));
+        oglasService.deleteOglasById(oglasId);
     }
 
 
@@ -101,3 +104,4 @@ public class OglasController {
         return null;
     }
 }
+
